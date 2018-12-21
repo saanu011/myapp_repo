@@ -1,0 +1,69 @@
+<h1>User LogIn</h1>
+
+
+<h3>**Allowed user name is praveen and password is praveen, for more user, the user array is user_name and password array is user_pwd.</h3>
+
+
+<form [formGroup]='messageForm' (ngSubmit)='firstClick()'>
+  <h3 *ngIf='success'>Your form is submitted</h3>
+
+
+
+  <label>
+    Select Account Type:
+    <!--<input type="checkbox" ng-model="selected">-->
+
+
+  <select  id="select" class="account">
+    <option>Account Type</option>
+    <option id="man" ng-selected="selected">Manager</option>
+    <option id="sup_1" ng-selected="selected">Superviser1</option>
+    <option id="sup_2"  ng-selected="selected">Superviser2</option>
+    <option id="emp"  ng-selected="selected">Employee</option>
+  </select>
+
+</label>
+
+
+  <label>
+    Name:
+    <input  type='text' formControlName='name' id="u_name">
+    <div *ngIf='submitted && messageForm.controls.name.errors' class='error'>
+        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+
+    </div>
+
+  </label>
+
+  <label>
+    Password:
+    <input  type='password' formControlName='message' id="u_pwd">
+    <div *ngIf='submitted && messageForm.controls.message.errors' class='error'>
+      <div *ngIf="messageForm.controls.message.errors.required">Password is required</div>
+    </div>
+  </label>
+
+    <input type="submit" value="LogIn" class="cta">
+
+
+
+
+</form>
+
+
+<div id="after">
+  <span id="fname"></span>
+  <span id="lname"></span>
+  <span id="email"></span>
+  <span id="acc"></span>
+  <span id="loc"></span>
+
+</div>
+<!--<div *ngIf="submitted" class="results">
+   <strong>Name:</strong>
+   <span>{{ messageForm.controls.name.value }}</span>
+
+   <strong>Message:</strong>
+   <span>{{ messageForm.controls.message.value }}</span>
+</div>
+-->
