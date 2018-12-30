@@ -1,0 +1,4 @@
+After moving to directory where all the files are present, in terminal, type:
+  ng serve --o
+  
+  this will automatically start the server after successfull compilation.
